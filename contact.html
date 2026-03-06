@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trava</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts are imported in style.css -->
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <h1>Evolve</h1>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div class="navbar-menu-toggle">
+            <i class="fa-solid fa-bars" onclick="shownavbar()"></i>
+        </div>
+    </nav>
+
+    <div class="side-navbar">
+        <p style="text-align: right;">
+            <i class="fa-solid fa-xmark" onclick="closenavbar()"></i>
+        </p>
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+    </div>
+    <!--Contact-->
+    <div class="contact">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you. Whether you have a question about our collections, need styling advice, or just
+            want to say hello, our team is ready to answer all your questions.</p>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingtext">Evolve</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, adipisci.</p>
+            </div>
+            <div class="footer-icon">
+                <i class="fa-brands fa-instagram" style="color: #ffff;"></i>
+                <i class="fa-brands fa-twitter" style="color: #ffff;"></i>
+                <i class="fa-brands fa-facebook" style="color: #ffff;"></i>
+
+            </div>
+        </div>
+        <p>@2024 Evolve.com</p>
+    </div>
+    <script src="collection.js"></script>
+</body>
+
+</html>
