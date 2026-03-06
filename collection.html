@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolve</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <h1>Evolve</h1>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="navbar-link"><a href="contact.html">Contact</a></p>
+            <p class="navbar-link cart-icon-nav" style="cursor: pointer;" onclick="toggleCartSidebar()"><i
+                    class="fa-solid fa-cart-shopping"></i> <span class="cart-count"
+                    style="display:none;background:var(--accent-color);color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;position:relative;top:-10px;left:-5px;">0</span>
+            </p>
+        </div>
+
+        <div class="navbar-menu-toggle">
+            <i class="fa-solid fa-cart-shopping cart-icon-nav-mobile" style="margin-right: 15px; cursor: pointer;"
+                onclick="toggleCartSidebar()"><span class="cart-count"
+                    style="display:none;background:var(--accent-color);color:#fff;border-radius:50%;padding:2px 6px;font-size:12px;position:relative;top:-10px;left:-5px;">0</span></i>
+            <i class="fa-solid fa-bars" onclick="shownavbar()"></i>
+        </div>
+    </nav>
+
+    <div class="side-navbar">
+        <p style="text-align: right;">
+            <i class="fa-solid fa-xmark" onclick="closenavbar()"></i>
+        </p>
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h2>Your Cart</h2>
+            <i class="fa-solid fa-xmark" style="cursor: pointer;" onclick="toggleCartSidebar()"></i>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items rendered by JS -->
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <p>Total:</p>
+                <p id="cart-total-price">$0.00</p>
+            </div>
+            <button class="checkout-btn" onclick="openCheckoutModal()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-overlay" id="quick-view-overlay" onclick="closeQuickView()"></div>
+    <div class="quick-view-modal" id="quick-view-modal">
+        <i class="fa-solid fa-xmark close-quick-view" onclick="closeQuickView()"></i>
+        <div class="quick-view-content">
+            <div class="quick-view-img">
+                <img id="qv-img" src="" alt="Product Image">
+            </div>
+            <div class="quick-view-details">
+                <h2 id="qv-name">Product Name</h2>
+                <p id="qv-price" class="qv-price-tag">$0.00</p>
+                <div class="qv-quantity">
+                    <label>Quantity:</label>
+                    <input type="number" id="qv-qty-input" value="1" min="1">
+                </div>
+                <button id="qv-add-to-cart-btn" class="shopbtn" style="width: 100%;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Success Modal -->
+    <div class="checkout-overlay" id="checkout-overlay" onclick="closeCheckoutModal()"></div>
+    <div class="checkout-modal" id="checkout-modal">
+        <i class="fa-solid fa-circle-check success-icon"></i>
+        <h2>Order Confirmed!</h2>
+        <p>Thank you for your purchase. Your order is being processed.</p>
+        <button class="shopbtn" onclick="closeCheckoutModal()">Continue Shopping</button>
+    </div>
+
+    <!--Prouduct-->
+    <div class="product-section">
+        <form class="product-search">
+            <input type="text" id="search" placeholder="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+          <div class="products" id="products">
+            <div class="product-box">
+            <img src="https://cdn.pixabay.com/photo/2017/08/11/03/34/dress-shirt-2625183_1280.jpg?w=600&auto=format&fit=crop" alt="Classic Shirt">
+            <p>Classic Shirts</p>
+            </div>
+
+            <div class="product-box">
+            <img src="https://cdn.pixabay.com/photo/2025/03/16/10/22/woman-printed-shirt-shirt-portrait-9472261_1280.jpg?w=600&auto=format&fit=crop" alt="Printed Shirt">
+            <p>Printed Shirts</p>
+            </div>
+
+           <div class="product-box">
+           <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop">
+           <p>Dress for Women</p>
+          </div>
+            <div class="product-box">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop"
+                    alt="Leather Jacket">
+                <p>Leather Jacket</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingtext">Evolve</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, adipisci.</p>
+            </div>
+            <div class="footer-icon">
+                <i class="fa-brands fa-instagram" style="color: #ffff;"></i>
+                <i class="fa-brands fa-twitter" style="color: #ffff;"></i>
+                <i class="fa-brands fa-facebook" style="color: #ffff;"></i>
+
+            </div>
+        </div>
+        <p>@2024 Evolve.com</p>
+    </div>
+    <script src="cart.js"></script>
+    <script src="collection.js"></script>
+</body>
+
+</html>
